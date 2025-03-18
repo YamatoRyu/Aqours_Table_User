@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(193, 202, 212, 0.685), rgba(255, 255, 255, 0.685)), 
+            url("/image/Uranohoshi High School at behind.png");
+}
