@@ -1,5 +1,7 @@
 package protection.member.aqours_data.web;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import protection.member.aqours_data.security.SecurityService;
 import protection.member.aqours_data.sql.AqoursClothesData;
 import protection.member.aqours_data.sql.UserData;
+import protection.member.aqours_data.sql.repository.AqoursClothesRepository;
 
 @Controller
 @RequestMapping("/home")
@@ -29,9 +32,12 @@ public class HomeWeb {
         return "AccountPrivate";
     }
 
+    @Autowired
+    private AqoursClothesRepository repository;
+
     @GetMapping("/table")
     public String accountTable(Model model) {
-        AqoursClothesData aqoursData = new AqoursClothesData();
+        List<AqoursClothesData> aqoursData = repository.findAll();
         model.addAttribute("aqours", aqoursData);
 
         return "AqoursTable";
