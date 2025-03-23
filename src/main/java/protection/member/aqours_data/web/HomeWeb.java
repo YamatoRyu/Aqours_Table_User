@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import protection.member.aqours_data.model.AqoursModel;
 import protection.member.aqours_data.security.SecurityService;
 import protection.member.aqours_data.sql.AqoursClothesData;
 import protection.member.aqours_data.sql.UserData;
@@ -41,5 +42,12 @@ public class HomeWeb {
         model.addAttribute("aqours", aqoursData);
 
         return "AqoursTable";
+    }
+
+    @GetMapping("/table/create")
+    public String createAqoursTable(Model model) {
+        model.addAttribute("aqours", new AqoursModel());
+
+        return "CreateAqoursTable";
     }
 }
