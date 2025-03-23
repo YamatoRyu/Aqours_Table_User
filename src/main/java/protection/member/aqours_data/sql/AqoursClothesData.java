@@ -31,15 +31,6 @@ public class AqoursClothesData {
     private int height;
 
     @NotNull
-    private int bust;
-
-    @NotNull
-    private int waist;
-
-    @NotNull
-    private int hips;
-
-    @NotNull
     private String clothesCaptionImage;
 
     @NotNull
@@ -106,30 +97,6 @@ public class AqoursClothesData {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public int getBust() {
-        return bust;
-    }
-
-    public void setBust(int bust) {
-        this.bust = bust;
-    }
-
-    public int getWaist() {
-        return waist;
-    }
-
-    public void setWaist(int waist) {
-        this.waist = waist;
-    }
-
-    public int getHips() {
-        return hips;
-    }
-
-    public void setHips(int hips) {
-        this.hips = hips;
     }
 
     public String getClothesCaptionImage() {

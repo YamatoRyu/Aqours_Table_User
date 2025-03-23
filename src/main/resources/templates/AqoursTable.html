@@ -8,6 +8,12 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+    <h1 class="text-center">Aqours Table</h1>
+
+    <div class="d-grid col-3">
+        <a href="/home/table/create" class="btn btn-primary">Create Table</a>
+    </div>
+
     <table class="table">
         <thead>
             <tr>
@@ -16,9 +22,6 @@
                 <th scope="col">Birthday</th>
                 <th scope="col">Age</th>
                 <th scope="col">Height</th>
-                <th scope="col">Bust</th>
-                <th scope="col">Waist</th>
-                <th scope="col">Hips</th>
                 <th scope="col">Image</th>
                 <th scope="col">Description</th>
                 <th scope="col">Action</th>
@@ -32,12 +35,17 @@
                 <td th:text="@{${aqours.birthdayMonth} + ' ' + ${aqours.birthdayDate}}"></td>
                 <td th:text="@{${aqours.age} + ' years'}"></td>
                 <td th:text="@{${aqours.height} + ' cm'}"></td>
-                <td th:text="@{${aqours.bust} + ' cm'}"></td>
-                <td th:text="@{${aqours.waist} + ' cm'}"></td>
-                <td th:text="@{${aqours.hips} + ' cm'}"></td>
-                <td></td>
+
+                <td>
+                    <img th:src="@{'/image/character/' + ${aqours.image}}">
+                </td>
+
                 <td th:text="${aqours.clothesCaptionImage}"></td>
-                <td></td>
+
+                <td>
+                    <a th:href="@{/home/table/edit(id=${aqours.id})}" class="btn btn-secondary">Edit</a>
+                    <a th:href="@{/home/table/delete(id=${aqours.id})}" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         </tbody>
     </table>
